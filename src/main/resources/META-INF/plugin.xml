@@ -9,10 +9,12 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.hellfire99.nprogressbar.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.hellfire99.nprogressbar.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.github.hellfire99.nprogressbar.ProgressBarLafManagerListener"
+                  topic="com.intellij.ide.ui.LafManagerListener"/>
+        <listener class="com.github.hellfire99.nprogressbar.ProgressBarLafManagerListener"
+                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
 </idea-plugin>
