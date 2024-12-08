@@ -1,20 +1,23 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.hellfire99.nprogressbar</id>
-    <name>NProgressBar</name>
-    <vendor>hellfire99</vendor>
+  <id>nl.rh.plugin</id>
+  <name>NP Progress Bar</name>
+  <version>1.0</version>
+  <idea-version since-build="193"/>
+  <vendor email="robheikoop@gmail.com">HellFire99</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+  <extensions defaultExtensionNs="com.intellij">
+  </extensions>
 
-    <extensions defaultExtensionNs="com.intellij">
-    </extensions>
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
 
-    <applicationListeners>
-        <listener class="com.github.hellfire99.nprogressbar.ProgressBarLafManagerListener"
-                  topic="com.intellij.ide.ui.LafManagerListener"/>
-        <listener class="com.github.hellfire99.nprogressbar.ProgressBarLafManagerListener"
-                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+  <applicationListeners>
+    <listener class="nl.rh.plugin.ProgressBarLafManagerListener"
+              topic="com.intellij.ide.ui.LafManagerListener" />
+    <listener class="nl.rh.plugin.ProgressBarLafManagerListener"
+              topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+  </applicationListeners>
 </idea-plugin>

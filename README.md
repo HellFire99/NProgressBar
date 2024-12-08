@@ -1,51 +1,45 @@
 # NProgressBar
 
-![Build](https://github.com/HellFire99/NProgressBar/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+The Mario progress bar for IntelliJ IDEA and other JetBrains IDEs.
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+[![Version](https://img.shields.io/jetbrains/plugin/v/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions)
+[![Rating](https://img.shields.io/jetbrains/plugin/r/rating/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/reviews)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar)
 
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+![MarioDeterminateBar](https://i.imgur.com/3ry0GOy.gif)
+![LuigiDeterminateBar](https://i.imgur.com/CQPjfTb.gif)
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+![MarioIndeterminateBar](https://i.imgur.com/fdUDmZI.gif)
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
+This is the [Mario Progress Bar](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions) for [JetBrains IntelliJ IDEA](https://www.jetbrains.com/idea/) based on the Nyan Progress Bar by Dmitry Batkovitch. It display Mario with some bricks for the basic bar and a Koopa Shell for the indeterminate one.
 
-## Installation
+## Configuration
 
-- Using the IDE built-in plugin system:
-  
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "NProgressBar"</kbd> >
-  <kbd>Install</kbd>
-  
-- Using JetBrains Marketplace:
+You can access plugin's configuration in :
 
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
+Settings > Tools > Mario Progress Bar 
 
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+You can choose your character here
 
-- Manually:
+![PluginConfigurationPage](https://i.imgur.com/0o2t116.png)
 
-  Download the [latest release](https://github.com/HellFire99/NProgressBar/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+## Contributing
 
+Contributions are very welcome on this project! Please see our [contributing guidelines](CONTRIBUTING.md) and [code of conduct](CODE_OF_CONDUCT.md) to get started.
 
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+## Acknowledgements
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+### Sprites
+* All sprites belong to Nintendo. Find them on [Spriters-Resource](https://www.spriters-resource.com/)
+
+### Code
+
+* The code for the progress bar was adapted from [Nyan Progess Bar](https://github.com/batya239/NyanProgressBar).
+* This plugin is of course heavily dependent on JetBrains' IntelliJ SDK  
+
+### Misc
+
+* Gif editing done with [Gimp](https://www.gimp.org/)
+* This readme is inspired by the [Kagof intellij-pokemon-progress](https://github.com/kagof/intellij-pokemon-progress/blob/master/README.md)
+
+[![Buy Me a Coffee](https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP3VybD1hSFIwY0hNNkx5OWpaRzR1WW5WNWJXVmhZMjltWm1WbExtTnZiUzkxY0d4dllXUnpMM0J5YjJacGJHVmZjR2xqZEhWeVpYTXZNakF5TVM4d015ODBZekkwT0RnNE1XWmxOVE5pWmprM1lUa3pOV1kxWm1NNFlqRXpPV1EyTWk1d2JtYz0mc2l6ZT0zMDAmbmFtZT1raWtpbWFuamFybw==&creator=kikimanjaro&is_creating=creating%20mobile%20apps%20and%20plugins&design_code=1&design_color=%23ff813f&slug=kikimanjaro)](https://www.buymeacoffee.com/kikimanjaro)

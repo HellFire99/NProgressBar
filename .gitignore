@@ -1,5 +1,6 @@
-.gradle
-.idea
-.intellijPlatform
-.qodana
-build
+
+# Project exclude paths
+/out/
+/.idea/
+/build/
+/.gradle/
