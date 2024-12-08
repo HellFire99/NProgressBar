@@ -14,6 +14,9 @@ Nope
 
 ### Sprites
 
+<!-- Plugin description --> 
+
+<!-- Plugin description end -->
 
 ### Code
 
