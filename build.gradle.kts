@@ -1,5 +1,7 @@
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import kotlin.collections.listOf
+import org.jetbrains.changelog.Changelog
+import org.jetbrains.changelog.markdownToHTML
 
 fun properties(key: String) = providers.gradleProperty(key)
 
@@ -12,6 +14,8 @@ plugins {
     alias(libs.plugins.kotlin)
     // Gradle IntelliJ Plugin
     alias(libs.plugins.intelliJPlatform)
+    // Gradle Changelog Plugin
+    alias(libs.plugins.changelog)
     // Gradle Qodana Plugin
     alias(libs.plugins.qodana)
     // Kotlin linter
@@ -105,6 +109,19 @@ intellijPlatform {
     pluginConfiguration {
         version = providers.gradleProperty("pluginVersion")
 
+        val changelog = project.changelog // local variable for configuration cache compatibility
+        // Get the latest available change notes from the changelog file
+        changeNotes = providers.gradleProperty("pluginVersion").map { pluginVersion ->
+            with(changelog) {
+                renderItem(
+                    (getOrNull(pluginVersion) ?: getUnreleased())
+                        .withHeader(false)
+                        .withEmptySections(false),
+                    Changelog.OutputType.HTML,
+                )
+            }
+        }
+
         ideaVersion {
             sinceBuild = providers.gradleProperty("pluginSinceBuild")
             untilBuild = providers.gradleProperty("pluginUntilBuild")
@@ -132,6 +149,12 @@ intellijPlatform {
     }
 }
 
+// Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
+changelog {
+    groups = listOf("Added", "Changed", "Removed", "Fixed")
+    repositoryUrl = properties("pluginRepositoryUrl")
+}
+
 // Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
 kover {
     reports {
@@ -149,6 +172,7 @@ tasks {
     }
 
     publishPlugin {
+        dependsOn(patchChangelog)
     }
 }
 
